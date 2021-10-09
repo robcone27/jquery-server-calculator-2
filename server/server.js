@@ -15,6 +15,7 @@ app.listen(PORT, () => {
 
 
 
-
+//grab new quote from request body 
+let addition = req.body;
 
 app.use(express.static('server/public'));

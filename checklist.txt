@@ -1,5 +1,5 @@
-[ ] Create a user interface where the user can input two values
-[ ] create the select type of mathematical operation.
+[ x] Create a user interface where the user can input two values
+[ x] create the select type of mathematical operation.
 [ ]submit button that "=" capture this input, bundle it up in an object
 [ ]There should also be a 'C' button that will clear the user input fields.
 [ ]bundle it up in an object, and send this object to the server via a POST
