@@ -1,0 +1,12 @@
+[ ] Create a user interface where the user can input two values
+[ ] create the select type of mathematical operation.
+[ ]submit button that "=" capture this input, bundle it up in an object
+[ ]There should also be a 'C' button that will clear the user input fields.
+[ ]bundle it up in an object, and send this object to the server via a POST
+[ ]
+[ ]
+[ ]
+[ ]
+Keep a historical record of all math operations and solutions on the server. Display a list of all previous calculations on the page when it loads using a GET request. Update the list when a new calculation is made.
+
+NOTE: History should exist even after refreshing the page. It's expected that the history will go away after restarting the server. We'll talk about long term data storage next week.
