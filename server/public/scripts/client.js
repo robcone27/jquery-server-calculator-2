@@ -2,16 +2,36 @@ $(document).ready(handleReady);
 
 function handleReady() {
     console.log('jq running');
+    getAddData();
+    $(`#equalButton`).on(`click`, addNumber);
+    $(`#addButton`).on(`click`, addNumber);
+    $(`#minusButton`).on(`click`, minusBtn);
+    $(`#divideButton`).on(`click`, divideBtn);
+    $(`#multiplyButton`).on(`click`, multiplyBtn);
+}
+let operator = '';
+
+function addsBtn() {
+    operator = '+'
+}
+function minusBtn() {
+    operator = '-'
+}
+function multiplyBtn() {
+    operator = '*'
+}
+function divideBtn() {
+    operator = '/'
 }
 
-console.log('js')
 
-function addNumbers(num0, num1) {
-    let answer = num0 + num1;
-    return answer;
-}
 
-console.log(addNumbers(6, 2))
+// function addNumbers(num0, num1) {
+//     let answer = num0 + num1;
+//     return answer;
+// }
+
+// console.log(addNumbers(6, 2))
 
 // add new player 
 function addNumber() {
@@ -21,12 +41,13 @@ function addNumber() {
         data: {
             inputOne: $(`#inputOne`).val(),
             inputTwo: $(`#inputTwo`).val(),
+            operator: operator,
         }
 
     }).then(function (response) {
         console.log('success post', response);
         $(`#answerReturn`).empty();
-        // getPlayerData();        <------------neeed to look into this function 
+        getAddData();
         $(`#inputOne`).val(``);
         $(`#inputTwo`).val(``);
     }).catch(function (response) {
@@ -35,21 +56,27 @@ function addNumber() {
 };
 
 // get player data from the server
-function getPlayerData() {
+function getAddData() {
     $.ajax({
-        type: 'GET',
+        method: 'GET',
         url: '/adding'
     }).then(function (response) {
+        console.log('success', response);
         // append data to the DOM
-        for (let i = 0; i < response.length; i++) {
-            let player = response[i];
-            $('#answerReturn').append(`
-                <tr>
-                    <td>${player.firstName}</td>
-                    <td>${player.lastName}</td>
-                    <td>${player.born}</td>
-                </tr>
-            `);
-        }
-    });
+        renderHistory(response);
+    }).catch(function (response) {
+        alert('request failed')
+    })
+}
+
+
+function renderHistory(res) {
+    $(`.historyOfEquations`).empty();
+
+    for (let number of res) {
+        $(`#equation`).html(`
+        <li>
+        ${number.inputOne} ${number.operator} ${number.inputTwo} = 
+        </li>`)
+    }
 }
