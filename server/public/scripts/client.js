@@ -4,14 +4,14 @@ function handleReady() {
     console.log('jq running');
     getAddData();
     $(`#equalButton`).on(`click`, addNumber);
-    $(`#addButton`).on(`click`, addNumber);
+    $(`#addButton`).on(`click`, addBtn);
     $(`#minusButton`).on(`click`, minusBtn);
     $(`#divideButton`).on(`click`, divideBtn);
     $(`#multiplyButton`).on(`click`, multiplyBtn);
 }
 let operator = '';
 
-function addsBtn() {
+function addBtn() {
     operator = '+'
 }
 function minusBtn() {
@@ -26,10 +26,10 @@ function divideBtn() {
 
 
 
-// function addNumbers(num0, num1) {
-//     let answer = num0 + num1;
-//     return answer;
-// }
+function calc(num0, num1) {
+    let answer = num0 + num1;
+    return answer;
+}
 
 // console.log(addNumbers(6, 2))
 
