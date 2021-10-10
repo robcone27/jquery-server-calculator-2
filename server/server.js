@@ -32,16 +32,16 @@ app.use(express.static('server/public'));
 function total(response) {
     switch (response.operator) {
         case '+':
-            response.total = Number(response.num1) + Number(response.num1)
+            response.total = Number(response.inputOne) + Number(response.inputTwo)
             break;
         case '-':
-            response.total = Number(response.num1) - Number(response.num1)
+            response.total = Number(response.inputOne) - Number(response.inputTwo)
             break;
         case '*':
-            response.total = Number(response.num1) * Number(response.num1)
+            response.total = Number(response.inputOne) * Number(response.inputTwo)
             break;
         case '/':
-            response.total = Number(response.num1) / Number(response.num1)
+            response.total = Number(response.inputOne) / Number(response.inputTwo)
             break;
     }
     addNumberArray.push(response)

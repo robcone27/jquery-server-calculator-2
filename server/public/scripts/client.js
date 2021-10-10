@@ -72,11 +72,16 @@ function getAddData() {
 
 function renderHistory(res) {
     $(`.historyOfEquations`).empty();
+    $(`#equation`).empty();
 
     for (let number of res) {
-        $(`#equation`).html(`
+        $(`#equation`).append(`
         <li>
-        ${number.inputOne} ${number.operator} ${number.inputTwo} = 
+        ${number.inputOne} ${number.operator} ${number.inputTwo} = ${number.total}
         </li>`)
+        $(`.answer`).html(`
+        <h2>${number.total}</h2>
+        `)
+
     }
 }
