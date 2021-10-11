@@ -27,6 +27,7 @@ app.post('/adding', (req, res) => {
 
 
 
+
 app.use(express.static('server/public'));
 
 function total(response) {

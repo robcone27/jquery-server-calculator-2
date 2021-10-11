@@ -8,6 +8,7 @@ function handleReady() {
     $(`#minusButton`).on(`click`, minusBtn);
     $(`#divideButton`).on(`click`, divideBtn);
     $(`#multiplyButton`).on(`click`, multiplyBtn);
+    $(`#clearButton`).on(`click`, clearInputs);
 }
 let operator = '';
 
@@ -23,7 +24,12 @@ function multiplyBtn() {
 function divideBtn() {
     operator = '/'
 }
-
+function clearInputs() {
+    $(`#inputTwo`).val('')
+    $(`#inputOne`).val(''),
+        operator = '';
+    console.log('clear inputs');
+}
 
 
 function calc(num0, num1) {
