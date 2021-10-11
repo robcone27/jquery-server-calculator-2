@@ -10,6 +10,7 @@ function handleReady() {
     $(`#multiplyButton`).on(`click`, multiplyBtn);
     $(`#clearButton`).on(`click`, clearInputs);
 }
+
 let operator = '';
 
 function addBtn() {
@@ -32,14 +33,8 @@ function clearInputs() {
 }
 
 
-function calc(num0, num1) {
-    let answer = num0 + num1;
-    return answer;
-}
 
-// console.log(addNumbers(6, 2))
-
-// add new player 
+// add new equation
 function addNumber() {
     $.ajax({
         method: 'POST',
@@ -61,7 +56,7 @@ function addNumber() {
     })
 };
 
-// get player data from the server
+// get player equation from the server
 function getAddData() {
     $.ajax({
         method: 'GET',
